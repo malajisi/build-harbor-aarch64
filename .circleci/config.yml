@@ -24,7 +24,7 @@ jobs:
             tar zcf harbor-offline-installer-aarch64.tgz harbor
             rm -rf harbor
             docker build -t bitm/harbor_images_aarch64:$Harbor_Git_Tag .
-            echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin  1.94.250.191:1080
+            echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin  1.94.250.191:1080
             docker push bitm/harbor_images_aarch64:$Harbor_Git_Tag
   build-tags:
     environment:
@@ -51,7 +51,7 @@ jobs:
             tar zcf harbor-offline-installer-aarch64.tgz harbor
             rm -rf harbor
             docker build -t bitm/harbor_images_aarch64:$Harbor_Git_Tag .
-            echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin  1.94.250.191:1080
+            echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin  1.94.250.191:1080
             docker push bitm/harbor_images_aarch64:$Harbor_Git_Tag
 workflows:
   version: 2
